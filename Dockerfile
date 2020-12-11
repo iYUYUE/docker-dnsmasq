@@ -16,7 +16,7 @@ RUN mkdir -p /etc/default/
 RUN echo -e "ENABLED=1\nIGNORE_RESOLVCONF=yes" > /etc/default/dnsmasq
 COPY dnsmasq.conf /etc/dnsmasq.conf
 # add cron job for dnsmasq-china-list
-COPY ./scripts/update-dnsmasq-china-list.sh /etc/periodic/daily/update-dnsmasq-china-list.sh
-RUN chmod +x /etc/periodic/daily/update-dnsmasq-china-list.sh
+COPY ./scripts/update-dnsmasq-china-list.sh /etc/periodic/daily/update-dnsmasq-china-list
+RUN chmod +x /etc/periodic/daily/update-dnsmasq-china-list
 #run!
 ENTRYPOINT ["/opt/scripts/start.sh"]
